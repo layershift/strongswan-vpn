@@ -1,0 +1,45 @@
+{
+  "jpsVersion": "0.1",
+  "jpsType": "update",
+  "application": {
+    "id": "strongswan-vpn",
+    "name": "strongswan vpn client",
+    "categories": [
+      "apps/others"
+    ],
+    "targetNodes": {
+     "nodeGroup": "*"
+    },
+    "version": "5.5.2",
+    "homepage": "https://github.com/layershift/strongswan-vpn",
+    "description": {
+      "text": "<span><b>STRONGSWAN VPN CLIENT</b></span>
+      "short": "Open source tool to connect to your environment via VPN"
+    },
+    "onInstall": [
+      {
+	"cmd [cp]": "curl -fsS http://example.com/install_script.sh | /bin/bash -s arg1 arg2"
+      }
+    ],
+    "procedures": [
+      {
+        "id": "log",
+        "onCall": {
+          "log": "${this.message}"
+        }
+      },
+    ],
+    "onUninstall": {
+      "call": [
+        {
+	  "cmd [cp]": "curl -fsS http://example.com/uninstall_script.sh | /bin/bash -s arg1 arg2"
+        }
+      ]
+    },
+    "settings": {
+    },
+    "success": {
+      "text": "Your openswan test is installed succesfully"
+    }
+  }
+}
